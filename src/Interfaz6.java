@@ -70,7 +70,7 @@ public class Interfaz6 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
         jLabel5.setText("Valor del aviso");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(0, 153, 51));
@@ -85,10 +85,15 @@ public class Interfaz6 extends javax.swing.JFrame {
         cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdBorrar.setForeground(new java.awt.Color(153, 0, 0));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
         txtValor.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
-        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 130, -1));
+        jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 180, -1));
         jPanel1.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 90, -1));
         jPanel1.add(txtTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 90, -1));
         jPanel1.add(txtPala, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 90, -1));
@@ -138,6 +143,14 @@ public class Interfaz6 extends javax.swing.JFrame {
            
         }
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtTam.setText("");
+        txtPala.setText("");
+        txtColor.setText("");
+        txtValor.setText("");
+        txtPala.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
