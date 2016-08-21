@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,7 @@ public class Interfaz6 extends javax.swing.JFrame {
      */
     public Interfaz6() {
         initComponents();
+        txtValor.setEditable(false);
     }
 
     /**
@@ -52,12 +56,15 @@ public class Interfaz6 extends javax.swing.JFrame {
         jLabel1.setText("El Informador");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 260, -1));
 
+        jLabel2.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jLabel2.setText("Palabras del aviso");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jLabel3.setText("Tamaño del aviso");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         jLabel4.setText("Colores del aviso");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
@@ -65,10 +72,17 @@ public class Interfaz6 extends javax.swing.JFrame {
         jLabel5.setText("Valor del aviso");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        cmdCalcular.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdCalcular.setForeground(new java.awt.Color(0, 153, 51));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 290, 80, 30));
 
+        cmdBorrar.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 11)); // NOI18N
         cmdBorrar.setForeground(new java.awt.Color(153, 0, 0));
         cmdBorrar.setText("Borrar");
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
@@ -96,6 +110,34 @@ public class Interfaz6 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        String res1;
+        long tama,color,pala,suma,n1,n2,n3;
+         if (txtPala.getText().trim().isEmpty() ){
+             JOptionPane.showMessageDialog(this,"Por favor digiete la cantidad de palabras que desea en el aviso","Erorr",JOptionPane.ERROR_MESSAGE);
+            txtPala.requestFocusInWindow();
+        }else if (txtTam.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Por favor Digite el tamaño del aviso","Error",JOptionPane.ERROR_MESSAGE);
+            txtTam.requestFocusInWindow();
+        }else if (txtColor.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Por favor digite la cantidad de colores en el aviso","Error",JOptionPane.ERROR_MESSAGE);
+            txtColor.requestFocusInWindow();
+        }else{
+            
+       
+          tama = Long.parseLong(txtTam.getText());
+            pala = Long.parseLong(txtPala.getText());
+           color= Long.parseLong(txtColor.getText());
+           n1=pala*20000;
+           n2=tama*15000;
+           n3=color*25000;
+           suma=n1 + n2 +n3;
+           res1=String.valueOf(suma);
+           txtValor.setText(res1);
+           
+        }
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
