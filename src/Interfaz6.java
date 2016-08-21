@@ -94,8 +94,26 @@ public class Interfaz6 extends javax.swing.JFrame {
 
         txtValor.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
         jPanel1.add(txtValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 180, -1));
+
+        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtColorKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 90, -1));
+
+        txtTam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTamKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtTam, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 90, -1));
+
+        txtPala.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPalaKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtPala, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 90, -1));
 
         jLabel7.setFont(new java.awt.Font("Swis721 LtEx BT", 0, 18)); // NOI18N
@@ -151,6 +169,39 @@ public class Interfaz6 extends javax.swing.JFrame {
         txtValor.setText("");
         txtPala.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtPalaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPalaKeyTyped
+        char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())){ 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtPalaKeyTyped
+
+    private void txtTamKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTamKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())){ 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtTamKeyTyped
+
+    private void txtColorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyTyped
+       char c=evt.getKeyChar();
+             
+         
+          if(!Character.isDigit(evt.getKeyChar())){ 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_txtColorKeyTyped
 
     /**
      * @param args the command line arguments
